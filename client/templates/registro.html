@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Datos
+{% endblock %}
+
+{% block content %}
+    {% if dato %}
+        <div class="row">
+            <div class="progress" id="ph" style="transform: rotate({{ ph.rotacion }}deg)">
+                <div class="progress1" style="transform: rotate({{ ph.irotacion }}deg)">pH</div>
+                <div class="progress2" style="transform: rotate({{ ph.irotacion }}deg)">{{ dato.ph }}</div>
+            </div>
+            <div class="progress" id="temperatura" style="transform: rotate({{ temperatura.rotacion }}deg)">
+                <div class="progress1" style="transform: rotate({{ temperatura.irotacion }}deg)">Temp.</div>
+                <div class="progress2" style="transform: rotate({{ temperatura.irotacion }}deg)">{{ dato.temperatura }}</div>
+            </div>
+            <div class="progress" id="turbidez" style="transform: rotate({{ turbidez.rotacion }}deg)">
+                <div class="progress1" style="transform: rotate({{ turbidez.irotacion }}deg)">Turbidez</div>
+                <div class="progress2" style="transform: rotate({{ turbidez.irotacion }}deg)">{{ dato.turbidez }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="progress" id="tds" style="transform: rotate({{ tds.rotacion }}deg)">
+                <div class="progress1" style="transform: rotate({{ tds.irotacion }}deg)">TDS</div>
+                <div class="progress2" style="transform: rotate({{ tds.irotacion }}deg)">{{ dato.tds }}</div>
+            </div>
+            <div class="progress" id="co2" style="transform: rotate({{ co2.rotacion }}deg)">
+                <div class="progress1" style="transform: rotate({{ co2.irotacion }}deg)">CO2</div>
+                <div class="progress2" style="transform: rotate({{ co2.irotacion }}deg)">{{ dato.co2 }}</div>
+            </div>
+        </div>
+    {% else %}
+        <p>No hay datos disponibles.</p>
+    {% endif %}
+    <div class="switch-container">
+        <label for="auto-reload-switch">Recarga automática</label>
+        <input type="checkbox" id="auto-reload-switch" checked>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Recargar la página cada 5 segundos si el switch está activado y la pestaña está visible
+    function autoReload() {
+        if (document.getElementById('auto-reload-switch').checked && document.visibilityState === 'visible') {
+            setTimeout(function() {
+                location.reload();
+            }, 3000);
+        }
+    }
+    autoReload();
+    document.getElementById('auto-reload-switch').addEventListener('change', autoReload);
+    document.addEventListener('visibilitychange', autoReload);
+</script>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .switch-container {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .switch-container label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    .switch-container input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+</style>
+{% endblock %}

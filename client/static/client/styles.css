@@ -1,0 +1,115 @@
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  margin-bottom: 20px;
+}
+
+/* Column */
+.col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Progress */
+.progress, .progress1, .progress2 {
+  width: 12rem;
+  height: 12rem;
+}
+
+.progress1, .progress2 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  color: #333;
+}
+
+.progress {
+  margin: auto;
+  background: linear-gradient(0deg, #e63939 50%, rgba(84, 33, 177, 0.2) 50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50%;
+}
+
+.progress1 {
+  background: rgb(255, 255, 255) content-box;
+  padding: 0.5em;
+  box-sizing: border-box;
+  font-size: 2rem;
+  line-height: 7.5rem;
+  border-radius: 50%;
+}
+
+.progress2 {
+  background: linear-gradient(transparent 50%, rgb(255, 255, 255) 50%);
+  line-height: 13rem;
+  
+}
+
+/* Specific IDs */
+#ph:before {
+  content: "pH";
+}
+
+#temperatura:before {
+  content: "Temp.";
+}
+
+#turbidez:before {
+  content: "Turbidez";
+}
+
+#tds:before {
+  content: "TDS";
+}
+
+#co2:before {
+  content: "CO2";
+}
